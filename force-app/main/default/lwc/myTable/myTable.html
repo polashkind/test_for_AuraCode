@@ -1,0 +1,24 @@
+<template>
+  <lightning-tabset variant="scoped">
+    <div class="slds-box slds-theme_shade slds-theme_alert-texture">
+      <lightning-tab label="Contact" class="contact">
+        <template if:true={accList}>
+          <lightning-datatable data={accList} columns={columnCont} key-field="Id">
+          </lightning-datatable>
+        </template>
+        <template if:true={error}>
+          {error}
+        </template>
+      </lightning-tab>
+      <lightning-tab label="Oppurtunity" class="opportunity">
+        <template if:true={accList}>
+          <lightning-datatable data={accList} columns={columnOpp} key-field="Id">
+          </lightning-datatable>
+        </template>
+        <template if:true={error}>
+          {error}
+        </template>
+      </lightning-tab>
+    </div>
+  </lightning-tabset>
+</template>
